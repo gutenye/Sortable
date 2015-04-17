@@ -47,7 +47,8 @@
 		var name = _getModelName(component),
 			items = component.state && component.state[name] || component.props[name];
 
-		return items.slice();
+		//return items.slice();
+		return items
 	}
 
 
