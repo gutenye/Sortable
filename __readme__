@@ -1,0 +1,13 @@
+_dragStarted: function () {
+	_dispatchEvent(this, rootEl, 'start', dragEl, rootEl, oldIndex);
+
+_onDrop: function (/**Event*/evt) {
+	_dispatchEvent(this, rootEl, 'update', dragEl, rootEl, oldIndex, newIndex);
+	_dispatchEvent(this, rootEl, 'sort', dragEl, rootEl, oldIndex, newIndex);
+
+function _dispatchEvent(sortable, rootEl, name, targetEl, fromEl, startIndex, newIndex) {
+	var evt = document.createEvent('Event'),
+		options = (sortable || rootEl[expando]).options,
+		onName = 'on' + name.charAt(0).toUpperCase() + name.substr(1);
+		evt.to = rootEl;
+		...
